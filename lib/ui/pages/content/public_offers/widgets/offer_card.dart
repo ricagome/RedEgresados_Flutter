@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:red_egresados/ui/widgets/card.dart';
 
-
 class OfferCard extends StatelessWidget {
   // Este widget permite mostrar los detalles de una oferta de trabajo.
   // Sigue los siguientes pasos con ayuda del instructor.
@@ -11,28 +10,27 @@ class OfferCard extends StatelessWidget {
   // 1. Define las variables que van a ser utilizadas por el widget
   // ejemplo:  final String finalTitle;
 
-  final String finalTitle, content, arch, level;
+  final String title, content, arch, level;
   final int payment;
   final VoidCallback onCopy, onApply;
 
-
   // 2. Implementa el constructor del widget
   // const OfferCard({Key? key}): super(key: key);
-  const OfferCard({
-    Key? key,
-    required this.title,
-    required this.content,
-    required this.arch,
-    required this.level,
-    required this.payment,
-    required this.onCopy,
-    required this.onApply}): super(key: key);
-  
+  const OfferCard(
+      {Key? key,
+      required this.title,
+      required this.content,
+      required this.arch,
+      required this.level,
+      required this.payment,
+      required this.onCopy,
+      required this.onApply})
+      : super(key: key);
 
   // 3. Construye el widget utilizando el metodo build@override
   // Widget build(BuildContext context) {}
-Widget build(BuildContext context) {
-Color primaryColor = Theme.of(context).colorScheme.primary;
+  Widget build(BuildContext context) {
+    Color primaryColor = Theme.of(context).colorScheme.primary;
     return AppCard(
       title: title,
       content: Text(
@@ -105,9 +103,5 @@ Color primaryColor = Theme.of(context).colorScheme.primary;
         ],
       ),
     );
-
-
-}
-
-
+  }
 }
